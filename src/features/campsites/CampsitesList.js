@@ -19,7 +19,7 @@ const CampsitesList = () => {
                 );
             })}
         </Row>
-    )
-}
+    );
+};
 
 export default CampsitesList;
