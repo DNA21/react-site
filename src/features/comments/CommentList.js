@@ -4,8 +4,9 @@ import { selectCommentsByCampsiteId } from './commentSlice';
 
 const CommentsList = ({ campsiteId }) => {
     const comments = selectCommentsByCampsiteId(campsiteId);
+    const goodReviews = comments.filter((comment)=> comment.rating >= 4 );
 
-    if(comments && comments. length > 0) {
+    if(comments && comments.length > 0) {
         return (
             <Col md='5' className='m-1'>
                 <h4>Comments</h4>
@@ -14,7 +15,7 @@ const CommentsList = ({ campsiteId }) => {
                 })}
             </Col>
         );
-    }
+    };
     return (
         <Col md='5' className='m-1'>
             There are no comments for this campsite yet.
